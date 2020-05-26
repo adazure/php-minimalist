@@ -10,12 +10,12 @@ if (!empty($ROUTES)) {
     foreach ($ROUTES[$REQUEST_METHOD] as $ROUTE) {
 
         // Gerekli değerler
-        $method = $ROUTE['method'];
+        $view = $ROUTE['view'];
         $url = $ROUTE['url'];
         $regex = $ROUTE['regex'];
 
         // Regex ile karşılaştırma yapılıyor
-        preg_match_all($regex, $REQUEST_URI, $result);
+        preg_match_all('/^' . $regex . '[\/]*$/', $REQUEST_URI, $result);
         if ($result) {
             print_r($result);
         }
