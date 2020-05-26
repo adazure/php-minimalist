@@ -1,6 +1,13 @@
 <?php
-
 if (!empty($ROUTES)) {
+
+    $twig;
+    $loader = new Twig_Loader_Filesystem('views');
+    $this->twig = new Twig_Environment($loader);
+    $filter = new Twig_Filter('lang', 'Lang::get');
+    $this->twig->addFilter($filter);
+    $this->twig->addFunction(new Twig_Function('query', 'Router::getQuery'));
+    $this->twig->addFilter(new Twig_Filter('html', 'htmlspecialchars_decode'));
 
     // Request üzerinden gelen bir takım değerler alınıyor
     $REQUEST_METHOD = $_SERVER['REQUEST_METHOD'];
