@@ -17,7 +17,7 @@ if (!empty($ROUTES)) {
         // Regex ile karşılaştırma yapılıyor
         preg_match_all('/^' . $regex . '[\/]*$/', $REQUEST_URI, $result);
         if (count($result[0]) > 0) {
-            echo $twig->render($view . '.html', []);
+            echo $twig->render($view, []);
             exit;
         }
     }
