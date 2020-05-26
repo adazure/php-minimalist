@@ -14,10 +14,12 @@ if (!empty($ROUTES)) {
         $url = $ROUTE['url'];
         $regex = $ROUTE['regex'];
 
+
         // Regex ile karşılaştırma yapılıyor
         preg_match_all('/^' . $regex . '[\/]*$/', $REQUEST_URI, $result);
-        if ($result) {
-            print_r($result);
+        if (count($result[0]) > 0) {
+            echo file_get_contents('views/' . $view);
+            exit;
         }
     }
 }
