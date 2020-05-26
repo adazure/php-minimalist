@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
 // Import
 require_once(__DIR__ . '/core/engine.php');
 require_once(__DIR__ . '/models/routing.php');
