@@ -9,5 +9,5 @@
             RewriteEngine on
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteCond %{REQUEST_FILENAME} !-d
-            RewriteRule ^(.*)$ /bootstrap.php [NC,L,QSA]
+            RewriteRule ^(.*)$ index.php [NC,L,QSA]
         </IfModule> 
